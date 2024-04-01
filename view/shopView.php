@@ -13,8 +13,10 @@
     ?>
         <h1>Welcome To The Shop</h1>
     <div class="global">
-        <h2>Hi Boss, What Would You Like To Do, Today?</h2>
-<?php include("inc/navMenu.php");?>
+    <h2>Hi There. How Can I Help You Today?</h2>
+    
+    <?php include("inc/navMenu.php");?>
+
     </div> <!-- end of global -->
     <script src="scripts/script.js"></script>
 </body>

@@ -1,3 +1,83 @@
 body {
-    background-color: #f4d292;
+    background-color: #2cae7a;
+    text-align: center;
+    color: #0b4247;
+}
+
+.global {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: #9de27d;
+    margin: 3vh auto;
+    width: 60vw;
+    height: 80vh;
+    border: 2px solid #e48746;
+    border-radius: 20px;
+    
+}
+
+.navUL {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.stockUL {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navLink {
+    color: #0b4247;
+    border: 2px solid #e48746;
+    border-radius: 10px;
+    width: 20%;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.stockLink {
+    color: #0b4247;
+    border: 1px solid #e48746;
+    border-radius: 8px;
+    width: 16%;
+    height: 35px;
+    line-height: 35px;
+    text-decoration: none;
+    font-size: large;
+    margin: 10px;
+}
+
+.stockBack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 3vh;
+}
+
+.navLink:hover, .stockLink:hover {
+    background-color: #f9ea9e;
+}
+
+.stockBack ul {
+    list-style: none;
+    margin: 0;
+}
+
+.stockBack ul a {
+    text-decoration: none;
+}
+
+.stockBack h3 {
+    margin: 0;
+}
+
+.addItemCat {
+    color: #0b4247;
 }

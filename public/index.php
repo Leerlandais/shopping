@@ -7,8 +7,30 @@ try {
 } catch (Exception $e) {
     die($e->getMessage());
 }   
-var_dump($db); 
 
-$allGoods = getAllGoods($db);
-
-include "../view/mainView.php";
+if (isset($_GET["pg"])) {
+    switch($_GET["pg"]) {
+        case "open":
+            $title = "Shop";
+            include("../view/shopView.php");
+            break;
+        case "stock" :
+            $title = "Stock Control";
+            include("../view/stockView.php");
+            break;
+        case "finance" :
+            $title = "Shop Finances";
+            include("../view/bankView.php");
+            break;
+       case "home" :
+            $title = "Welcome to the Shop";
+            include("../view/mainView.php");
+            break;            
+            default : 
+            $title = "Shop";
+            include('../view/mainView.php');
+    }
+    }else {
+        $title = "Shop";
+        include('../view/mainView.php');
+}
