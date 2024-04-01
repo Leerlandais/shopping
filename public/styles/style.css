@@ -65,7 +65,10 @@ body {
     background-color: #f9ea9e;
 }
 
-.stockBack ul {
+.stockBack ul, .stockBack li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     list-style: none;
     margin: 0;
 }
@@ -80,4 +83,11 @@ body {
 
 .addItemCat {
     color: #0b4247;
+}
+
+.addNewCatItem {
+    width: 40%;
+    margin: 50px auto 0;
+    border: 1px solid #e48746;
+    border-radius: 10px;
 }
