@@ -8,6 +8,10 @@
 </head>
 <body>
     <h6 id="screenwidth"></h6>
+    <?php
+    var_dump($db);
+    var_dump($allGoods);
+    ?>
     <script src="scripts/script.js"></script>
 </body>
 </html>

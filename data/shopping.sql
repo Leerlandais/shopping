@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Mar 31, 2024 at 05:42 PM
+-- Generation Time: Apr 01, 2024 at 05:49 AM
 -- Server version: 11.2.2-MariaDB
 -- PHP Version: 8.2.13
 
@@ -32,7 +32,18 @@ CREATE TABLE IF NOT EXISTS `category` (
   `cat_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `category` varchar(128) NOT NULL,
   PRIMARY KEY (`cat_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`cat_id`, `category`) VALUES
+(1, 'fruit'),
+(2, 'vegetable'),
+(3, 'dairy'),
+(4, 'meat'),
+(5, 'Soft Drinks');
 
 -- --------------------------------------------------------
 
@@ -101,6 +112,39 @@ CREATE TABLE IF NOT EXISTS `main` (
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `main`
+--
+
+INSERT INTO `main` (`id`, `name`) VALUES
+(1, 'Apples'),
+(2, 'Oranges'),
+(3, 'Bananas'),
+(4, 'Onions'),
+(5, 'Potatoes'),
+(6, 'Peppers'),
+(7, 'Leeks'),
+(8, 'Coca Cola'),
+(9, 'Ballygowan'),
+(10, 'Milk'),
+(11, 'Butter'),
+(12, 'Cheddar'),
+(13, 'Whole Chicken');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `main_has_price`
+--
+
+DROP TABLE IF EXISTS `main_has_price`;
+CREATE TABLE IF NOT EXISTS `main_has_price` (
+  `price_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `main_price_id` int(10) UNSIGNED NOT NULL,
+  `cost_id` int(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`price_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -117,7 +161,26 @@ CREATE TABLE IF NOT EXISTS `main_has_stuff` (
   `markup_id` int(10) UNSIGNED DEFAULT NULL,
   `promo_id` int(10) UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `main_has_stuff`
+--
+
+INSERT INTO `main_has_stuff` (`id`, `main_id`, `category_id`, `markup_id`, `promo_id`) VALUES
+(1, 1, 1, NULL, NULL),
+(2, 2, 1, NULL, NULL),
+(3, 3, 1, NULL, NULL),
+(4, 4, 2, NULL, NULL),
+(5, 5, 2, NULL, NULL),
+(6, 6, 2, NULL, NULL),
+(7, 7, 2, NULL, NULL),
+(8, 8, 5, NULL, NULL),
+(9, 9, 5, NULL, NULL),
+(10, 10, 3, NULL, NULL),
+(11, 11, 3, NULL, NULL),
+(12, 12, 3, NULL, NULL),
+(13, 13, 4, NULL, NULL);
 
 -- --------------------------------------------------------
 
