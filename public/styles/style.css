@@ -59,6 +59,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin-left: 3vh;
+    
 }
 
 .navLink:hover, .stockLink:hover {
@@ -79,6 +80,19 @@ body {
 
 .stockBack h3 {
     margin: 0;
+}
+
+.stockAddItem {
+    list-style: none;
+}
+
+.stockAddItemA {
+    text-decoration: none;
+    color: #0b4247;
+}
+
+.stockAddItemA:hover {
+    color: #f9ea9e;
 }
 
 .addItemCat {

@@ -10,9 +10,14 @@ try {
 }   
 
 $getCategories = getCategoriesForAdd($db);
+$getItems = getItemsForAdd($db);
 
-if (isset($_POST["newCat"])) {
-    $addCat = addNewCategory($db, $_POST["newCat"]);
+if (isset($_POST["newCat"]) && isset($_POST["catSlug"])) {
+    $addCat = addNewCategory($db, $_POST["newCat"], $_POST["catSlug"]);
+}
+
+if (isset($_POST["newItem"]) && isset($_POST["itemSlug"]) && isset($_POST["itemCat"])) {
+    $addItem = addNewItem($db, $_POST["newItem"], $_POST["itemSlug"],$_POST["itemCat"]);
 }
 
 if (isset($_GET["pg"])) {

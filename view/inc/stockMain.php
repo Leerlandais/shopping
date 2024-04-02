@@ -28,7 +28,7 @@
             <h3>Set Prices</h3>
         </div>
             <?php 
-        }else if ($_GET["stockarea"] === "control") {
+        }else if ($_GET["stockarea"] === "control" && !isset($_GET["addnew"])) {
             ?>
             <div class="stockBack">
             <a href="?pg=stock" class="stockLink">Retour</a>
