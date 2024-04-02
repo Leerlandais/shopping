@@ -87,3 +87,21 @@ function getItemsForAdd(PDO $db) {
                     return $e->getMessage();
                 }
 }
+
+function getItemsForPricing(PDO $db) {
+    $sql = "SELECT i.item_name AS nom, p.price_cost AS buy, p.price_sell AS sell
+            FROM item i
+            LEFT JOIN price p
+            ON i.item_id = p.price_iditem
+            ORDER BY nom
+    ";
+                    try{
+                        $query = $db->query($sql);
+                        $result = $query->fetchAll();
+                        $query->closeCursor();
+                        return $result;
+                
+                    }catch(Exception $e){
+                        return $e->getMessage();
+                    }
+}

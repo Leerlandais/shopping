@@ -25,9 +25,23 @@
             ?>
             <div class="stockBack">
             <a href="?pg=stock" class="stockLink">Retour</a>
-            <h3>Set Prices</h3>
         </div>
+            <ul></ul>
+            <?php
+            foreach($priceItems as $pi) { 
+                if($pi["sell"] && $pi["buy"]) {
+                ?>
+                <li><?=$pi["nom"]?><span><?=$pi["buy"]?></span><span><?=$pi["sell"]?></span></li>
             <?php 
+            }else {
+                ?>
+                <li><?=$pi["nom"]?><span><?=$pi["buy"]?></span><span><?=$pi["sell"]?></span></li>
+                <?php
+            }
+            }
+            ?>
+            </ul>
+            <?php
         }else if ($_GET["stockarea"] === "control" && !isset($_GET["addnew"])) {
             ?>
             <div class="stockBack">

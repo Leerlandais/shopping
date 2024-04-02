@@ -11,6 +11,7 @@ try {
 
 $getCategories = getCategoriesForAdd($db);
 $getItems = getItemsForAdd($db);
+$priceItems = getItemsForPricing($db);
 
 if (isset($_POST["newCat"]) && isset($_POST["catSlug"])) {
     $addCat = addNewCategory($db, $_POST["newCat"], $_POST["catSlug"]);
